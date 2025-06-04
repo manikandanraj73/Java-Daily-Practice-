@@ -1,0 +1,45 @@
+import java.util.Scanner;
+import java.util.Random;
+class basic{
+  public static void main(String[] args) {
+  Scanner scanner=new Scanner(System.in);
+  Random random=new Random();
+  int rand=random.nextInt(1,11);
+  int guess=0;
+  System.out.println("Welcome to guess game");
+  
+  while(guess!=rand){
+    System.out.print("Enter a number between 1 to 10  :");
+    guess=scanner.nextInt();
+  if(guess>rand){
+    System.out.println("To High......");
+    System.out.println("take another chance......");
+  }
+  else if(guess<rand){
+    System.out.println("To Low......");
+    System.out.println("take another chance......");
+  }
+  else{
+    System.out.println("CORRECT.... YOU WIN");
+  }
+  }
+
+  scanner.close();
+  
+  }
+}
+---------------------------------------------------------------------------------------------------------------
+// Connection of jdbc
+public static void main(String[] args)throws SQLException {
+
+        String url="jdbc:mysql://localhost:3306/details";
+        String userName="root";
+        String password="mani2004";
+        String query="select * from students;";
+            Connection con=DriverManager.getConnection(url,userName,password);
+            Statement st=con.createStatement();
+            ResultSet rst=st.executeQuery(query);
+            while (rst.next()) {
+               System.out.println(rst.getInt(1)+""+""+rst.getString(2)+""+""+rst.getString(3)+""+""+rst.getString(4));                
+            }
+            con.close();
