@@ -19,7 +19,7 @@ import java.util.*;
        
 
       String url="jdbc:mysql://localhost:3306/details";
-        final String userName="root";
+        String userName="root";
         String password="mani2004";
         String query=("insert into students values(?,?,?,?)");
         Connection con=DriverManager.getConnection(url,userName,password);
@@ -81,27 +81,8 @@ import java.util.*;
       
       }
       //ubdate data
-      public void ubdateData()throws SQLException{
-        System.out.println("press 1 to update name\npress 2 to update course\npress 3 to update year");
-        int option=scanner.nextInt();
-        switch (option) {
-          case 1:
-            
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-          default:
-            break;
-        }
-      String url="jdbc:mysql://localhost:3306/details";
-      String userName="root";
-      String password="mani2004";
-      Connection con=DriverManager.getConnection(url,userName,password);
+      
       }
-    }
+    
     
 
