@@ -1,0 +1,69 @@
+public class Student{
+    private int id;
+    private String name;
+    private String course;
+    private String year;
+    public int getId(){return id;}
+    public void setId(int id){this.id=id;}
+    public String getName(){return name;}
+    public void setName(String name){this.name=name;}
+    public String getCourse(){return course;}
+    public void setCourse(String course){this.course=course;}
+    public String getYear(){return year;}
+    public void setYear(String year){this.year=year;}
+}
+public class StudentDao {
+    public void addStudent(Student s){
+        try(Connection con=dbconnection.getConnection();
+        PreparedStatement stmt= con.PreparedStatement("insert into students(name,course,year)values(?,?,?)")){
+            stmt.setString(1,s.getName());
+            stmt.setString(2,s.getCourse());
+            stmt.setString(3,s.getYear());
+            stmt.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public void viewStudent(){
+        try(Connection con=dbconnection.getConnection();
+        Statement stmt= con.createStatement();
+        ResultSet rs=stmt.executeQuery("select * from students")){
+            while (rs.next()) {
+                System.out.println(rs.getInt(1)+""+rs.getString(2)+""+rs.getString(3)+""+rs.getString(4));
+                
+            }
+        }
+          
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    public class jdbcjava {
+        public static void main(String[] args) {
+            
+                StudentDao sd=new StudentDao;
+                Student s =new Student();
+                switch (ch) {
+                    case 1:
+                    System.out.println("name:");
+                    s.setName(inp.nextLine());
+                    System.out.println("course:");
+                    s.setCourse(inp.nextLine());
+                    System.out.println("name:");
+                    s.setYear(inp.nextLine());
+                       sd.addStudent(s);
+                        break;
+                case 2:
+                sd.viewStudent();
+                        break;
+                }
+                
+            }
+        }
+    
+        
+    }
+
+    

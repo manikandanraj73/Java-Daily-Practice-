@@ -5,32 +5,27 @@ import java.util.*;
 
  public class adddata {
   static Scanner scanner=new Scanner(System.in);
-    public static int adddetails() throws SQLException{
+    public static void adddetails(int i,String n,String c,String y,String m) throws SQLException{
         
+        String name=n,course=c,year=y,mobile=m;
+        int id=i;
        
-        System.out.print("Enter your name:");
-        String name=scanner.nextLine();
-        System.out.println("Enter your course:");
-      
-        String course=scanner.nextLine();
-       
-        System.out.print("Enter your Year like('I','II','III'):");
-        String year=scanner.next();
-       
-
       String url="jdbc:mysql://localhost:3306/details";
         String userName="root";
         String password="mani2004";
-        String query=("insert into students values(?,?,?,?)");
+        String query=("insert into student values(?,?,?,?,?)");
         Connection con=DriverManager.getConnection(url,userName,password);
         PreparedStatement pr =con.prepareStatement(query);
-        pr.setInt(1, 0);
+        pr.setInt(1, id);
         pr.setString(2, name);
-        pr.setString(3,course);
-        pr.setString(4,year);
+        
+        pr.setString(3,year);
+        pr.setString(4,course);
+        pr.setString(5, mobile);
         int count =pr.executeUpdate();
-        return count;
-
+        int isEmpty=0;
+        if(count==isEmpty)System.out.println("Insertion Failed");
+      else System.out.println("Inserted Successfully");
     }
     //view data
     /**
@@ -41,12 +36,12 @@ import java.util.*;
       String url="jdbc:mysql://localhost:3306/details";
       String userName="root";
       String password="mani2004";
-      String qry=("Select * from students");
+      String qry=("Select * from student");
       Connection con=DriverManager.getConnection(url,userName,password);
       Statement st= con.createStatement();
       ResultSet rs=st.executeQuery(qry);
       while (rs.next()) {
-        System.out.println("id= "+rs.getInt(1)+" \tName="+rs.getString(2)+" \t Course="+rs.getString(3)+" \tYear"+rs.getString(4));
+        System.out.println("id= "+rs.getInt(1)+" \tName="+rs.getString(2)+" \t Course="+rs.getString(4)+" \tYear= "+rs.getString(3)+"\t mobile= "+rs.getString(5));
         
       }
         
@@ -54,18 +49,14 @@ import java.util.*;
 
     }
     //delete data
-    public static void deleteData() throws SQLException{
+    public static void deleteData(int id) throws SQLException{
       
       String url="jdbc:mysql://localhost:3306/details";
       String userName="root";
       String password="mani2004";
-      System.out.println("Enter id to delete records");
-      int id=scanner.nextInt();
-      
-      scanner.close();
       Connection con=DriverManager.getConnection(url,userName,password);
      try{
-      PreparedStatement pr=con.prepareStatement("delete from students where id =?");
+      PreparedStatement pr=con.prepareStatement("delete from student where rno =?");
       pr.setInt(1,id);
       int count =pr.executeUpdate();
       int isEmpty=0;
@@ -81,7 +72,27 @@ import java.util.*;
       
       }
       //ubdate data
+      public static void updateDetails(int i,String n,String c,String y,String m) throws SQLException{
       
+        String name=n,course=c,year=y, mobile=m;
+        int id =i;
+       
+      String url="jdbc:mysql://localhost:3306/details";
+        String userName="root";
+        String password="mani2004";
+        Connection con=DriverManager.getConnection(url,userName,password);
+        PreparedStatement pr =con.prepareStatement("update student set name=?, course=?, year=?, mobile=? where rno=?");
+        
+        pr.setString(1, name);
+        pr.setString(2,course);
+        pr.setString(3,year);
+        pr.setString(4, mobile);
+        pr.setInt(5, id);
+        int count =pr.executeUpdate();
+        int isEmpty=0;
+      if(count==isEmpty){System.out.println("Please Enter Correct Roll Number");}
+       else System.out.println(count+" row updated");
+    }
       }
     
     
