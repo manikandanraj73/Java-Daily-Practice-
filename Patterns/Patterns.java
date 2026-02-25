@@ -2,14 +2,14 @@ package Patterns;
 
 public class Patterns{
     public static void main(String[] args) {
-    Patterns.pattern1();
-    Patterns.pattern2();
-    Patterns.pattern3();
-    Patterns.pattern4();
-    Patterns.pattern5();
-    Patterns.pattern6();
-    Patterns.pattern7();
-    Patterns.pattern8();
+    Patterns.pattern9();
+    // Patterns.pattern2();
+    // Patterns.pattern3();
+    // Patterns.pattern4();
+    // Patterns.pattern5();
+    // Patterns.pattern6();
+    // Patterns.pattern7();
+    // Patterns.pattern8();
     }
     // first Pattern
 public static void pattern1(){
@@ -191,5 +191,15 @@ public static void pattern8(){
         
     }
 }
+    public static void pattern9(){
+       int count=1;
+        for(int i=1;i<=4;i++){
+            for(int j=1;j<=i;j++){
+                System.out.print(count);
+                count++;
+            }
+            System.out.println("");
+        }
+    }
 
 }
