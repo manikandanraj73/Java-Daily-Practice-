@@ -2,11 +2,11 @@ package Patterns;
 
 public class Patterns{
     public static void main(String[] args) {
-    Patterns.pattern9();
+    Patterns.pattern10();
     // Patterns.pattern2();
     // Patterns.pattern3();
-    // Patterns.pattern4();
-    // Patterns.pattern5();
+    Patterns.pattern4();
+    Patterns.pattern5();
     // Patterns.pattern6();
     // Patterns.pattern7();
     // Patterns.pattern8();
@@ -191,13 +191,43 @@ public static void pattern8(){
         
     }
 }
+
     public static void pattern9(){
+        System.out.println("");
+System.out.println("PATTERN 9");
+        System.out.println("");
        int count=1;
         for(int i=1;i<=4;i++){
             for(int j=1;j<=i;j++){
                 System.out.print(count);
                 count++;
             }
+            System.out.println("");
+        }
+    }
+    // 10th Pattern
+     public static void pattern10(){
+        System.out.println("");
+System.out.println("PATTERN 10");
+        System.out.println("");
+
+        for(int i=5;i>=1;i--){
+            for(int space=5;space>=i;space--){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i;j++){
+               System.out.print(j);
+            }
+        System.out.println("");
+        }
+        for(int i=2;i<=5;i++){
+            for(int space=5;space>=i;space--){
+                System.out.print(" ");
+            }
+            for(int j=1;j<=i;j++){
+               System.out.print(j);
+            }
+        
             System.out.println("");
         }
     }
