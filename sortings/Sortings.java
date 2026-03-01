@@ -12,7 +12,7 @@ public class Sortings{
         // Sortings.minMaxValue(array);
        
         // Sortings.secondLargestElement(array);
-        Sortings.twoDarray();
+        Sortings.missingNumber();
     }
 
     public static void ascendingOrder(int []arr){
@@ -76,7 +76,7 @@ for(int i=0;i<arr.length;i++){
     System.out.println("Min Value = "+min);
 System.out.println("Max Value = "+max);
 }
-
+//  Find the second Largest Distinct value 
 public static void secondLargestElement(int []arr){
     int a=Integer.MIN_VALUE,b=Integer.MIN_VALUE,c=Integer.MIN_VALUE;
     for(int i=0;i<arr.length;i++){
@@ -92,6 +92,7 @@ public static void secondLargestElement(int []arr){
          System.out.println("first = "+a+"\nSecond = "+b+"\nThird = "+c+"");
 
     }
+    // Sum of 2 D Array in diagnolly
     public static void twoDarray(){
 int [][]array={{2,3,10},
                {5,5,8},
@@ -120,5 +121,15 @@ int [][]array={{2,3,10},
             System.out.println(sum);
             System.out.println(value);
     }
-
+public static void missingNumber(){
+    int[] arr={0,2,3,5,6,7,8,9};
+    int target=0;
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]!=target){
+            System.out.println("missing Number: "+arr[i-1]);
+            target++;
+        }
+        if(arr[i]==target){target++;}
+    }
+}
 }
