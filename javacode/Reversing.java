@@ -3,6 +3,8 @@ class Reversing {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
     base.reversNumber();
+    base.reverseString();
+    base.checkAnagram();
     }
     public static void revrseString(){
     System.out.print("Enter a Word: ");
@@ -24,4 +26,40 @@ class Reversing {
             System.out.println(revers);
         
     }
+    public static void checkAnagram(){
+    System.out.print("Enter a word 1 : ");
+String word1=scanner.nextLine();
+ System.out.print("Enter a word 2 : ");
+String word2=scanner.nextLine();
+char[]arr1=word1.toCharArray();
+char[]arr2=word2.toCharArray();
+char temp;
+if(arr1.length==arr2.length){
+for(int i=0;i<arr1.length;i++){
+    for(int j=0;j<arr1.length-1;j++){
+        if(arr1[j]>arr1[j+1]){
+            temp=arr1[j];
+            arr1[j]=arr1[j+1];
+            arr1[j+1]=temp;
+        }
+    }
+}
+for(int i=0;i<arr2.length;i++){
+    for(int j=0;j<arr2.length-1;j++){
+        if(arr2[j]>arr2[j+1]){
+            temp=arr2[j];
+            arr2[j]=arr2[j+1];
+            arr2[j+1]=temp;
+        }
+    }
+}
+String a=new String(arr1);
+String b=new String(arr2);
+if(a.equals(b)){
+    System.out.println("It's a Anagram word");
+}
+else System.out.println("It's not a Anagram word");
+}
+else System.out.println("It's not a anagram word");
+}
 }
