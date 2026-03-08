@@ -62,4 +62,18 @@ else System.out.println("It's not a Anagram word");
 }
 else System.out.println("It's not a anagram word");
 }
-}
+
+public static void checkPalindrom(){
+    System.out.print("Enter a word : ");
+    String word1=scanner.nextLine();
+    String word2="";
+    for(int i=word1.length()-1;i>=0;i--){
+    word2+=word1.charAt(i);
+    }
+    if(word1.equals(word2)){
+    System.out.println(word1+" is a Palindrom");
+    }
+    else{
+    System.out.println(word1+" not a Palindrom");
+    }
+    }
