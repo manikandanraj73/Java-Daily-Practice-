@@ -5,6 +5,7 @@ class Reversing {
     base.reversNumber();
     base.reverseString();
     base.checkAnagram();
+    base.removeDuplicate();
     }
     public static void revrseString(){
     System.out.print("Enter a Word: ");
@@ -77,3 +78,26 @@ public static void checkPalindrom(){
     System.out.println(word1+" not a Palindrom");
     }
     }
+    public static void removeDuplicate(){
+        int [] arr={1,1,1,2,3,0,0,44,0,55,3,5};
+        int[] removeDup=new int[arr.length];
+        int k=0;
+        
+        for(int i=0;i<arr.length;i++){
+            boolean isExist=false;
+            for(int j=0;j<k;j++){
+                if(arr[i]==removeDup[j]){
+                    isExist=true;
+                    break;
+                }}
+                if(!isExist){
+                    removeDup[k]=arr[i];
+                    k++;
+                }
+            }
+            for(int i=0;i<k;i++){
+                System.out.print(removeDup[i]+" ");
+            }
+        
+    }
+     }
