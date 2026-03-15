@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 
 public class Sortings{
+    static Scanner scanner=new Scanner(System.in);
        public static void main(String[] args) {
         // int []array={-1,-1-22,-33,-44,-2,-2,-44,-55,-55,-77};
         // System.out.println("Before sorting = "+Arrays.toString(array));
@@ -14,7 +15,7 @@ public class Sortings{
         // Sortings.minMaxValue(array);
        
         // Sortings.secondLargestElement(array);
-        Sortings.frequencyOfChar();
+        Sortings.findTarget();
     }
 
     public static void ascendingOrder(int []arr){
@@ -135,7 +136,7 @@ public static void missingNumber(){
    }
 }
 public static void frequencyOfChar(){
-     Scanner scanner=new Scanner(System.in);
+     
 
     System.out.print("Enter a String: ");
     String str=scanner.nextLine().toUpperCase();
@@ -149,5 +150,42 @@ public static void frequencyOfChar(){
     }
 
     
+}
+public static void removeDup(){
+    int []arr1={1,2,3,33,4,0,5,6,5,6,2};
+    int[] arr2=new int[arr1.length];
+    int index=0;
+    boolean isExists=false;
+    for(int i=0;i<arr1.length;i++){
+        for(int j=0;j<index;j++){
+            if(arr1[i]==arr2[j]){
+                isExists=true; 
+                break;
+            } 
+            else{isExists=false;}   
+        }
+        
+        if(!isExists){
+            arr2[index]=arr1[i];
+            index++;
+        }
+    }
+    System.out.println(index);
+    for(int i=0;i<index;i++){
+        System.out.print(arr2[i]+" ");
+    }
+}
+public static void findTarget(){
+    int []arr={1,2,3,44,55,6,3,8,9,10};
+    int target=10;
+    for(int i=0;i<arr.length;i++){
+        for(int j=0;j<arr.length;j++){
+            int sum=0;
+            if(i!=j){
+            sum=arr[i]+arr[j];
+            }
+            if(sum==target){System.out.println("index = "+i+" "+j+"\nValues = "+arr[i]+" "+arr[j]);}
+        }
+    }
 }
 }
