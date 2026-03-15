@@ -2,12 +2,12 @@ import java.util.Scanner;
 class Reversing {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-    base.reversNumber();
-    base.reverseString();
-    base.checkAnagram();
-    base.removeDuplicate();
+    Reversing.reversNumber();
+    Reversing.reverseString();
+    Reversing.checkAnagram();
+    Reversing.removeDuplicate();
     }
-    public static void revrseString(){
+    public static void reverseString(){
     System.out.print("Enter a Word: ");
     String word=scanner.nextLine();
     for(int i=word.length()-1;i>=0;i--){
@@ -94,7 +94,7 @@ public static void checkPalindrom(){
         int [] arr={1,1,1,2,3,0,0,44,0,55,3,5};
         int[] removeDup=new int[arr.length];
         int k=0;
-        
+        //  
         for(int i=0;i<arr.length;i++){
             boolean isExist=false;
             for(int j=0;j<k;j++){
