@@ -63,7 +63,19 @@ else System.out.println("It's not a Anagram word");
 }
 else System.out.println("It's not a anagram word");
 }
-
+public static void findTarget(){
+    int []arr={1,2,3,44,55,6,3,8,9,10};
+    int target=10;
+    for(int i=0;i<arr.length;i++){
+        for(int j=0;j<arr.length;j++){
+            int sum=0;
+            if(i!=j){
+            sum=arr[i]+arr[j];
+            }
+            if(sum==target){System.out.println("index = "+i+" "+j+"\nValues = "+arr[i]+" "+arr[j]);}
+        }
+    }
+}
 public static void checkPalindrom(){
     System.out.print("Enter a word : ");
     String word1=scanner.nextLine();
