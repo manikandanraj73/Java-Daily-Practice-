@@ -15,6 +15,22 @@ class ProblemSolve {
     }
     System.out.println("");
 }
+    public static void longestSubStr(){
+String word="abcabb";
+ int max=0;
+ for(int i=0;i<word.length();i++){
+    boolean[]isHere=new boolean[256];
+    for(int j=i;j<word.length();j++){
+        char c=word.charAt(j);
+        if(isHere[c]){
+            break;
+        }
+        isHere[c]=true;
+        max=Math.max(max, j-i+1);
+    }
+ }
+ System.out.println("Max Length : "+max);
+}
     public static void reversNumber(){
         System.out.print("Enter Number: ");
         int num=scanner.nextInt();
