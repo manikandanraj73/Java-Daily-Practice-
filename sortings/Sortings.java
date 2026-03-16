@@ -175,6 +175,7 @@ public static void removeDup(){
         System.out.print(arr2[i]+" ");
     }
 }
+
 public static void findTarget(){
     int []arr={1,2,3,44,55,6,3,8,9,10};
     int target=10;

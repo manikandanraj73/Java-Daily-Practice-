@@ -1,11 +1,17 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Scanner;
 class Reversing {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-    Reversing.reversNumber();
-    Reversing.reverseString();
-    Reversing.checkAnagram();
-    Reversing.removeDuplicate();
+    // Reversing.reversNumber();
+    // Reversing.reverseString();
+    // Reversing.checkAnagram();
+    // Reversing.removeDuplicate();
+    Reversing.showAllSubStr();
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -112,4 +118,31 @@ public static void checkPalindrom(){
             }
         
     }
-     }
+
+    public static void longestSubstr(){
+        String word="a";
+        int start=0, maxLen=0;
+        HashSet<Character>set=new LinkedHashSet<>();
+       for(int end=0;end<word.length();end++){
+        while(set.contains(word.charAt(end))){
+            set.remove(word.charAt(start));
+            start++;
+        }
+        set.add(word.charAt(end));
+        
+        maxLen=Math.max(maxLen,end-start+1);
+       }
+        System.out.println("max length : "+maxLen);
+    }
+    public static void showAllSubStr(){
+        String word="abc";
+        for(int i=0;i<word.length();i++){
+            for(int j=0;j<word.length();j++){
+                for(int k=i;k<=j;k++){
+                    System.out.print(word.charAt(k));
+                }
+                System.out.println("");
+            }
+        }
+    }
+    }
