@@ -1,11 +1,11 @@
 import java.util.Scanner;
-class Reversing {
+class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-    Reversing.reversNumber();
-    Reversing.reverseString();
-    Reversing.checkAnagram();
-    Reversing.removeDuplicate();
+    ProblemSolve.reversNumber();
+    ProblemSolve.reverseString();
+    ProblemSolve.checkAnagram();
+    ProblemSolve.removeDuplicate();
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
