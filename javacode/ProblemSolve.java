@@ -4,14 +4,13 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Scanner;
-class Reversing {
+class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-    // Reversing.reversNumber();
-    // Reversing.reverseString();
-    // Reversing.checkAnagram();
-    // Reversing.removeDuplicate();
-    Reversing.showAllSubStr();
+    Reversing.reversNumber();
+    Reversing.reverseString();
+    Reversing.checkAnagram();
+    Reversing.removeDuplicate();
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -20,6 +19,22 @@ class Reversing {
         System.out.print(word.charAt(i));
     }
     System.out.println("");
+}
+    public static void longestSubStr(){
+String word="abcabb";
+ int max=0;
+ for(int i=0;i<word.length();i++){
+    boolean[]isHere=new boolean[256];
+    for(int j=i;j<word.length();j++){
+        char c=word.charAt(j);
+        if(isHere[c]){
+            break;
+        }
+        isHere[c]=true;
+        max=Math.max(max, j-i+1);
+    }
+ }
+ System.out.println("Max Length : "+max);
 }
     public static void reversNumber(){
         System.out.print("Enter Number: ");
