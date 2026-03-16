@@ -1,16 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Scanner;
 class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-    Reversing.reversNumber();
-    Reversing.reverseString();
-    Reversing.checkAnagram();
-    Reversing.removeDuplicate();
+   ProblemSolve.swapPair();
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -160,4 +155,35 @@ public static void checkPalindrom(){
             }
         }
     }
+    public static void swapPair(){
+    String word="mani";
+    String word2="";
+
+    char[] charr=word.toCharArray();
+    // if(word.length()%2==0){
+    for(int i=0;i<charr.length;i++){
+        if(i%2!=0){
+            word2+=charr[i]+""+charr[i-1]+"";
+        }
+        
+        }
+    if(word.length()%2!=0){
+            word2+=word.charAt(word.length()-1);
+    }
+System.out.println(word2);   
+}
+public static void charCount(){
+    String word="aabbccd".toLowerCase();
+    char[]charArray=word.toCharArray();
+    int[]count=new int[256];
+    for(int i=0;i<word.length();i++){
+        count[charArray[i]-'a']+=1;
+    }
+    for(int i=0;i<256;i++){
+        if(count[i]>0){
+           
+            System.out.print((char)(i+'a')+""+count[i]);
+        }
+    }
+}
     }
