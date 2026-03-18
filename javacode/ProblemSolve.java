@@ -1,11 +1,14 @@
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Scanner;
 class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-   ProblemSolve.swapPair();
+   System.out.println(ProblemSolve.countZero());
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -185,5 +188,32 @@ public static void charCount(){
             System.out.print((char)(i+'a')+""+count[i]);
         }
     }
+}
+public static void moveZeroToLast(){
+    System.out.print("Enter a collection of numbers");
+    int[]arr={1,0,6,-1,2,0,5,2,0};
+    List<Integer> list=new ArrayList<>();
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]>0 || arr[i]<0){
+            list.add(arr[i]);
+        }
+    }
+    for(int i=0;i<arr.length;i++){
+        if(arr[i]==0){
+            list.add(arr[i]);
+        }
+    }
+    System.out.println(list);
+}
+public static int countZero(){
+    System.out.print("Enter a numbers : ");
+    int num=scanner.nextInt();
+    int temp=num,last,count=0;
+    while(temp>0){
+        last=temp%10;
+        if(last==0){count+=1;}
+        temp=temp/10;
+    }
+    return count;
 }
     }
