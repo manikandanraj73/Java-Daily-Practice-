@@ -8,7 +8,8 @@ import java.util.Scanner;
 class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
-   System.out.println(ProblemSolve.countZero());
+//    System.out.println(ProblemSolve.countZero());
+ProblemSolve.printTables();
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -134,7 +135,7 @@ public static void checkPalindrom(){
 
     public static void longestSubstr(){
         String word="a";
-        int start=0, maxLen=0;
+        int start=0, maxLen=Integer.MIN_VALUE;
         HashSet<Character>set=new LinkedHashSet<>();
        for(int end=0;end<word.length();end++){
         while(set.contains(word.charAt(end))){
@@ -215,5 +216,13 @@ public static int countZero(){
         temp=temp/10;
     }
     return count;
+}
+public static void printTables(){
+    for(int i=1;i<=10;i++){
+        for(int j=1;j<=10;j++){
+            System.out.print(i*j+" ");
+        }
+        System.out.println();
+    }
 }
     }
