@@ -6,7 +6,7 @@ public class Patterns{
     // Patterns.pattern2();
     // Patterns.pattern3();
     Patterns.pattern4();
-    Patterns.pattern5();
+    //Patterns.pattern5();
     // Patterns.pattern6();
     // Patterns.pattern7();
     // Patterns.pattern8();
