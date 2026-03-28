@@ -9,7 +9,7 @@ class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
 //    System.out.println(ProblemSolve.countZero());
-ProblemSolve.printTables();
+ProblemSolve.sortBasedOnLastDigit();
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -225,4 +225,24 @@ public static void printTables(){
         System.out.println();
     }
 }
+ public static void sortBasedOnLastDigit(){
+    int[]arr={11,25,33,34,7,56,75,102};
+    int temp;
+    for(int i=0;i<arr.length;i++)
+    {
+        for(int j=0;j<arr.length-1;j++)
+        {
+
+            // %10 get last digit of the current values. So we can easily sort using last digit.
+            
+            if(arr[j]%10 >arr[j+1]%10)
+            { 
+                 temp=arr[j];
+                 arr[j]=arr[j+1];
+                 arr[j+1]=temp;
+            }
+        }
+    }
+    System.out.println(Arrays.toString(arr));
+ }
     }
