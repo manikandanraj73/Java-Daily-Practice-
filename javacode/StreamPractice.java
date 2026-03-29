@@ -6,10 +6,11 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 public class StreamPractice{
 public static void main(String[] args) {
 List<Integer>list=Arrays.asList(2,3,4,4,56,1,7,22);
-StreamPractice.findFactorial();
+StreamPractice.findSecondLargestElement(list);
 }
 // find the minimum and maximum value of that given list
 public static void findminMaxValues(List<Integer> list){
@@ -46,5 +47,14 @@ public static void findFactorial()
     int factorial=IntStream.rangeClosed(1, a)
     .reduce(1, (x,y)-> x*y);
     System.out.println(a+"'s "+factorial);
+}
+public static void findSecondLargestElement(List<Integer> list){
+    int secondLarge=list.stream()
+                    .distinct()
+                    .sorted(Comparator.reverseOrder())
+                    .skip(1)
+                    .findFirst()
+                    .orElse(0);
+System.out.println("Second largest Element :"+secondLarge);
 }
 }
