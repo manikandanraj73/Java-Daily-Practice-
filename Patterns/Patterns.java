@@ -2,10 +2,10 @@ package Patterns;
 
 public class Patterns{
     public static void main(String[] args) {
-    Patterns.pattern10();
+    // Patterns.pattern10();
     // Patterns.pattern2();
     // Patterns.pattern3();
-    Patterns.pattern4();
+    Patterns.zPattern();
     //Patterns.pattern5();
     // Patterns.pattern6();
     // Patterns.pattern7();
@@ -229,6 +229,23 @@ System.out.println("PATTERN 10");
             }
         
             System.out.println("");
+        }
+    }
+    // Z Pattern
+    public static void zPattern(){
+        System.out.println();
+        int n=8;
+        for(int i=0;i<n;i++){
+           for(int j=0;j<n;j++){
+                if(i==0 || i==n-1 ||j==n-i-1){
+                    System.out.print("*");
+                }
+                else{
+                    System.out.print(" ");
+            }
+               
+            }
+            System.out.println();
         }
     }
 
