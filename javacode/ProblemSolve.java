@@ -9,7 +9,18 @@ class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
 //    System.out.println(ProblemSolve.countZero());
-ProblemSolve.sortBasedOnLastDigit();
+ProblemSolve.reversArray();
+    }
+
+    // Revers the given array using one loop just swap the value's.
+    private static void reversArray() {
+       int[] arr={1,2,4,3,5,6,7};
+       for(int i=0;i<arr.length/2;i++){
+        int temp=arr[i];
+        arr[i]=arr[arr.length-i-1];
+        arr[arr.length-i-1]=temp;
+       }
+       System.out.println(Arrays.toString(arr));
     }
     public static void reverseString(){
     System.out.print("Enter a Word: ");
@@ -244,5 +255,20 @@ public static void printTables(){
         }
     }
     System.out.println(Arrays.toString(arr));
+ }
+ public static void maxSumOfSubarray(){
+    int[] arr={1,2,3,1,2,4,5,6,7,1};
+    int pair=3;
+    int index=0;
+    int max=Integer.MIN_VALUE;
+    for(int i=0;i<arr.length/pair;i++){
+        int sum=0;
+        for(int j=0;j<pair;j++){
+            sum+=arr[index];
+            index++;
+        }
+max=Math.max(max, sum);
+    }
+    System.out.println(max);
  }
     }
