@@ -5,7 +5,7 @@ public class Patterns{
     // Patterns.pattern10();
     // Patterns.pattern2();
     // Patterns.pattern3();
-    Patterns.zPattern();
+    Patterns.butterFluPattern();
     //Patterns.pattern5();
     // Patterns.pattern6();
     // Patterns.pattern7();
@@ -248,5 +248,38 @@ System.out.println("PATTERN 10");
             System.out.println();
         }
     }
-
-}
+    
+    public static void butterFluPattern(){
+        System.out.println();
+        int len=6;
+        // Top Part inclued the center line too
+        for(int i=len;i>=1;i--){
+            for(int space1=len;space1>i;space1--){ //for space at starting
+                System.out.print("   ");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print("* ");
+            }
+            for(int space2=1;space2<=i;space2++){ // for space at middle
+                System.out.print("  ");
+            }
+             for(int k=1;k<=i;k++){
+                System.out.print("* ");
+            }
+            System.out.println();}
+        // Bottom part of Pattern
+        for(int i=2;i<=len;i++){
+            for(int space1=len;space1>i;space1--){ //for space at starting
+                System.out.print("   ");
+            }
+            for(int j=1;j<=i;j++){
+                System.out.print("* ");
+            }
+            for(int space2=1;space2<=i;space2++){ // for space at middle
+                System.out.print("  ");
+            }
+            for(int k=1;k<=i;k++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        } }}
