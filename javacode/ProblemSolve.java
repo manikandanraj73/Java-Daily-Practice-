@@ -9,7 +9,7 @@ class ProblemSolve {
     static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args){
 //    System.out.println(ProblemSolve.countZero());
-ProblemSolve.reversArray();
+ProblemSolve.findMaxOfEachPairSum();
     }
 
     // Revers the given array using one loop just swap the value's.
@@ -271,4 +271,24 @@ max=Math.max(max, sum);
     }
     System.out.println(max);
  }
+
+public static void findMaxOfEachPairSum(){
+    int pair=1;
+    int max=Integer.MIN_VALUE;
+    int[]arr={1,1,1,8,9,9};
+    if(pair<=arr.length-1){
+    for(int i=0;i<arr.length;i++){
+        int count=pair,sum=0;
+        for(int j=i;j<arr.length && count!=0;j++){
+            sum+=arr[j];
+            count--;
+        }
+        max=Math.max(max, sum);
+    }
+    System.out.println("max sum of each PairArray : "+max);
+}
+else{System.out.println("Pair length greater than arrays length !");}
+}
+
+
     }
