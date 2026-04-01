@@ -2,14 +2,41 @@ package Patterns;
 
 public class Patterns{
     public static void main(String[] args) {
-    // Patterns.pattern10();
-    // Patterns.pattern2();
-    // Patterns.pattern3();
-    Patterns.butterFluPattern();
-    //Patterns.pattern5();
-    // Patterns.pattern6();
-    // Patterns.pattern7();
-    // Patterns.pattern8();
+    Patterns.snakePattern();
+    
+    }
+    public static void hollowPattern(){
+        int n=5;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==0|| i==n-1||j==0||j==n-1){
+                    System.out.print("*");
+                }
+                else{System.out.print(" ");}
+            }
+            System.out.println();
+        }
+    }
+    public static void snakePattern(){
+        int n=3,a=1;
+        for(int i=1;i<=n;i++){
+            if(i%2==1){
+                for(int j=1;j<=n;j++){
+            System.out.print(a);
+            a++;
+           }
+            }
+            else{
+                int b=a-1+n;
+                for(int k=1;k<=n;k++){
+                    System.out.print(b);
+                    b--;
+                }
+                a+=n;
+            }
+           
+           System.out.println();
+        }
     }
     // first Pattern
 public static void pattern1(){
@@ -249,7 +276,7 @@ System.out.println("PATTERN 10");
         }
     }
     
-    public static void butterFluPattern(){
+    public static void butterFlyPattern(){
         System.out.println();
         int len=6;
         // Top Part inclued the center line too
