@@ -2,7 +2,7 @@ package Patterns;
 
 public class Patterns{
     public static void main(String[] args) {
-    Patterns.snakePattern();
+    Patterns.checkBoardPattern();
     
     }
     public static void hollowPattern(){
@@ -309,4 +309,16 @@ System.out.println("PATTERN 10");
                 System.out.print("* ");
             }
             System.out.println();
-        } }}
+        } }
+    public static void checkBoardPattern(){
+        int n=3;
+        for(int i=0;i<n;i++){
+            int value=i%2==0?0:1;
+            for(int j=0;j<n;j++){
+                System.out.print(value);
+                value=1-value;
+            }
+            System.out.println();
+        }
+    }
+    }
