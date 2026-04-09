@@ -279,7 +279,7 @@ public static void findMaxOfEachPairSum(){
     if(pair<=arr.length-1){
     for(int i=0;i<arr.length;i++){
         int count=pair,sum=0;
-        for(int j=i;j<arr.length && count!=0;j++){
+        for(int j=i;j<arr.length && count!=0;j++){ 
             sum+=arr[j];
             count--;
         }
@@ -289,6 +289,4 @@ public static void findMaxOfEachPairSum(){
 }
 else{System.out.println("Pair length greater than arrays length !");}
 }
-
-
     }
